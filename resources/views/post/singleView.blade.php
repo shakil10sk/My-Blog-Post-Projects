@@ -15,7 +15,7 @@
         <li>Post Title:-> {{ $view->title }}</li>
         <li>Post Description:-> {{ $view->details }}</li>
         <li>Images:-> <br>
-            <img src="{{URL::to( $view->images) }}" alt="Images"></li>
+            <img src="{{URL::to( $view->images) }}" alt="Images" class="img-fluid" ></li>
         
     
     </ol>

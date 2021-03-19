@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+Route::get('/','HomeController@index');
+Route::get('home/view/{id}','HomeController@singleview');
+
 
 // About Routing
 Route::get('about','AboutController@index');
@@ -32,10 +35,9 @@ Route::get('/add/post','PostsController@create');
 Route::post('/store/post','PostsController@store');
 Route::get('/view/post','PostsController@index');
 Route::get('single/post/{id}','PostsController@singleView');
-
-
-
-
+Route::get('delete/post/{id}','PostsController@destroy');
+Route::get('edit/post/{id}','PostsController@edit');
+Route::post('update/post/{id}','PostsController@update');
 
 // Contact Routing
 Route::get('contact','ContactController@index')->name('contact');

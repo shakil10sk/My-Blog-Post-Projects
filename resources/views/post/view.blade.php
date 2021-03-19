@@ -34,6 +34,7 @@
         </tr>
       </thead>
       <tbody>
+
        @php
        $i=1;
       @endphp
@@ -62,8 +63,6 @@
 <div class="container">
     <div class="row">
       @foreach($posts as $value)
-        
-     
         <div class="col-lg-8 col-md-10 mx-auto">
             <div class="post-preview">
                 <a href="post.html">

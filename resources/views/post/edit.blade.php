@@ -23,9 +23,8 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
       <p>
-       <a href="{{ url('create/category') }}" class="btn btn-danger">Add Category</a>
-       <a href="{{ url('view/category') }}" class="btn btn-info">View Category</a>
-       <a href="{{ url('/view/post') }}" class="btn btn-info">View Post</a>
+       <a href="{{ url('create/post') }}" class="btn btn-danger">Add post</a>
+       <a href="{{ url('view/post') }}" class="btn btn-info">View post</a>
       </p>
       @if($errors->any())
       <div class="alert alert-danger">
@@ -37,22 +36,22 @@
       </div>
       @endif
       {{-- form start --}}
-        <form action="/store/post" method="post" enctype="multipart/form-data">
+        <form action="{{ url('/update/post/'.$post->id) }}" method="post" enctype="multipart/form-data">
           @csrf
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Title</label>
-              <input type="text" class="form-control" placeholder="Enter Post Titile" name="title" id="title">
+              <input type="text" class="form-control" value="{{ $post->title }}" name="title" id="title">
             </div>
           </div>
           <br>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
-              <label>Category</label>
+              <label>Category Slug</label>
               <select name="category_id" class="form-control">
                 <option value="">Select Category</option>
                 @foreach($category as $value)
-                <option value="{{ $value->id }}">{{ $value->slug }}</option>
+                <option value="{{ $value->id }}" @php  if($value->id== $post->category_id) echo "selected" @endphp>{{ $value->slug }}</option>
                 @endforeach
               </select>
             </div>
@@ -60,15 +59,19 @@
           <br>
           <div class="control-group">
             <div class="form-group border floating-label-form-group controls">
-              <label for="image">Post Picture</label>
+              <label for="image">New Picture</label>
               <input type="file" class="form-control"  id="image" name="images">
+              Old Image:<img src="{{ URL::to($post->images) }}" alt="images"  style="width: 100px; height:100px">
+              <input type="hidden" name="old_photo" value="{{ $post->images }}" >
             </div>
           </div>
           <br>
           <div class="control-group">           
             <div class="form-group p-2 border border-dark floating-label-form-group controls">
                 <label for="desciption">Post Desciption</label>
-              <textarea rows="5" class="form-control" placeholder="Post Desciption" id="desciption" name="details"></textarea>
+              <textarea rows="5" class="form-control"  id="desciption" name="details">
+                  {{ $post->details }}
+              </textarea>
             </div>
           </div>
           <br>
