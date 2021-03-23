@@ -41,3 +41,15 @@ Route::post('update/post/{id}','PostsController@update');
 
 // Contact Routing
 Route::get('contact','ContactController@index')->name('contact');
+
+//  Using Eloquent ORM Data CRUD Operation Method
+// Student
+
+// Route::get('/add/student','StudentController@create');
+// Route::post('/store/student','StudentController@store');
+// Route::get('/view/all/student','StudentController@index');
+// Route::get('/student/single/view/{id}','StudentController@view');
+// Route::get('/delete/student/{id}','StudentController@destroy');
+// Route::get('edit/student/{id}','StudentController@edit');
+// Route::post('/update/student/{id}','StudentController@update');
+Route::resource('student', 'StudentController');

@@ -11,17 +11,10 @@
        </p>
     <ol >
 
-        <li>{{ $dat->id }}</li>     
+        <li>{{ $dat->id }}</li>
         <li>{{ $dat->name }}</li>
         <li>{{ $dat->slug }}</li>
-    
+
     </ol>
 </div>
-
-
-
-
-
-
-
 @endsection

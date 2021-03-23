@@ -1,5 +1,5 @@
 @extends('frontend.main')
-@section('title', 'shakils pages')
+@section('title', 'Blog Post')
 @section('bg-img')
 @include('frontend.nav')
 @endsection

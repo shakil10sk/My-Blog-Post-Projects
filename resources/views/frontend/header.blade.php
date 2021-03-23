@@ -19,7 +19,7 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,
   300,600,700,800' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
-  
+
   <!-- Custom styles for this template -->
   <link href="{{ asset('frontend/css/clean-blog.min.css') }}" rel="stylesheet">
 
@@ -29,7 +29,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg  navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="/">Start Bootstrap</a>
+      <a class="navbar-brand" href="/">X-CORPORATION</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -45,7 +45,7 @@
             <a class="nav-link" href="/about">About</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" 
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
               Category
             </a>
@@ -55,13 +55,20 @@
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" 
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
               Posts
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="nav-link" href="/add/post">Add Post</a>
               <a class="nav-link" href="/view/post"> View Post</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" id="navbardropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Student</a>
+            <div class="dropdown-menu " aria-labelledby="navbardropdown">
+                <a href="{{ url('student/create') }}" class="nav-link">Add Student</a>
+                <a href="{{ url('/student') }}" class="nav-link">View All Student</a>
             </div>
           </li>
           <li class="nav-item">
@@ -72,4 +79,4 @@
     </div>
   </nav>
 
-  
+

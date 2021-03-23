@@ -48,10 +48,11 @@ class CategorisController extends Controller
             'cname'=>'required|max:255|min:3',
             'slug'=>'required|unique:Categories|max:255|min:3',
         ]);
+        // using Quiery Builder Method
         $data=array();
         $data['name']=$request->cname;
         $data['slug']=$request->slug;
-        $category=DB::table('categories')->insert($data); 
+        $category=DB::table('categories')->insert($data);
         if($category){
             $notification=array(
                 'message'=>'successfullt category inserted...',
@@ -109,7 +110,7 @@ class CategorisController extends Controller
         $data=array();
         $data['name']=$request->cname;
         $data['slug']=$request->slug;
-        $category=DB::table('categories')->where('id',$id)->update($data); 
+        $category=DB::table('categories')->where('id',$id)->update($data);
         if($category){
             $notification=array(
                 'message'=>'successfullt category Updated...',
